@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstMVVM.Views.SignUp">
+    <ContentPage.Content>
+        <Grid>
+            <Image x:Name="Image" Source="Wallpaper.png" Aspect="AspectFill" Opacity="0.4"/>
+            <StackLayout Padding="60,250,60,200">
+                <Frame BackgroundColor="#f5f7f2" Opacity="0.9" Padding="35,40,35,40">
+                    <StackLayout>
+                        <Label Text="Sign Up Now!" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="User.png" Opacity="0.4" HeightRequest="30"/>
+                            <Entry Placeholder="Username" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" PlaceholderColor="Gray" FontSize="Medium"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="if_f09c_213081.png" Opacity="0.4" HeightRequest="35"/>
+                            <Entry Placeholder="Password" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsPassword="True"  PlaceholderColor="Gray" FontSize="Medium"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="Email.png" Opacity="0.4" HeightRequest="30"/>
+                            <Entry Placeholder="Email" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" PlaceholderColor="Gray" FontSize="Medium"/>
+                        </StackLayout>
+                        <Button Text="Sign Up!" BackgroundColor="#3498db" TextColor="White" FontSize="Medium"/>
+                    </StackLayout>
+                </Frame>
+
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

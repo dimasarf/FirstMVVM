@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstMVVM.Views.Login"
+             Title="Login"
+             xmlns:ViewModel="clr-namespace:FirstMVVM.ViewModels">
+    <ContentPage.BindingContext>
+        <ViewModel:LoginViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid>
+            <Image x:Name="Image" Aspect="AspectFill" Opacity="0.4"/>
+            <StackLayout Padding="60,250,60,200">
+                <Frame BackgroundColor="#f5f7f2" Opacity="0.9" Padding="35,40,35,40">
+                    <StackLayout>                        
+                        <Label Text="Login Now!" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large"/>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="User.png" Opacity="0.4" HeightRequest="30"/>
+                            <Entry Placeholder="Username" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" PlaceholderColor="Gray" FontSize="Medium"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <Image Source="if_f09c_213081.png" Opacity="0.4" HeightRequest="35"/>
+                            <Entry Placeholder="Password" Text="{Binding Message}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsPassword="True"  PlaceholderColor="Gray" FontSize="Medium"/>
+                        </StackLayout>                        
+                        <Button Text="Login" BackgroundColor="#2ecc71" TextColor="White" FontSize="Medium"/>
+                        <Button Text="Sign Up!" BackgroundColor="#3498db" TextColor="White" FontSize="Medium" Command="{Binding SignUpCommand}"/>
+                    </StackLayout>
+                </Frame>
+                
+            </StackLayout>   
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

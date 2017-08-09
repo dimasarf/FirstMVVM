@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FirstMVVM.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace FirstMVVM
         {
             InitializeComponent();
 
-            MainPage = new FirstMVVM.MainPage();
+            MainPage = new NavigationPage(new Login());
         }
 
         protected override void OnStart()
