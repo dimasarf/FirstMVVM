@@ -16,13 +16,13 @@
                         <Label Text="Login Now!" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large"/>
                         <StackLayout Orientation="Horizontal">
                             <Image Source="User.png" Opacity="0.4" HeightRequest="30"/>
-                            <Entry Placeholder="Username" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" PlaceholderColor="Gray" FontSize="Medium"/>
+                            <Entry Placeholder="Username" Text="{Binding Username}"  VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" PlaceholderColor="Gray" FontSize="Medium"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Image Source="if_f09c_213081.png" Opacity="0.4" HeightRequest="35"/>
-                            <Entry Placeholder="Password" Text="{Binding Message}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsPassword="True"  PlaceholderColor="Gray" FontSize="Medium"/>
-                        </StackLayout>                        
-                        <Button Text="Login" BackgroundColor="#2ecc71" TextColor="White" FontSize="Medium"/>
+                            <Entry Placeholder="Password" Text="{Binding Password}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsPassword="True"  PlaceholderColor="Gray" FontSize="Medium"/>
+                        </StackLayout>
+                        <Button Text="Login" BackgroundColor="#2ecc71" TextColor="White" FontSize="Medium" Command="{Binding LoginCommand}"/>
                         <Button Text="Sign Up!" BackgroundColor="#3498db" TextColor="White" FontSize="Medium" Command="{Binding SignUpCommand}"/>
                     </StackLayout>
                 </Frame>

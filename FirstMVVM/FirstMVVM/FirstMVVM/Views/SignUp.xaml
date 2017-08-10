@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FirstMVVM.Views.SignUp">
+             x:Class="FirstMVVM.Views.SignUp"
+             xmlns:ViewModels="clr-namespace:FirstMVVM.ViewModels">
+    <ContentPage.BindingContext>
+        <ViewModels:SignUpViewModel/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <Grid>
             <Image x:Name="Image" Source="Wallpaper.png" Aspect="AspectFill" Opacity="0.4"/>
@@ -11,20 +15,31 @@
                         <Label Text="Sign Up Now!" TextColor="Gray" VerticalOptions="Center" HorizontalOptions="Center" FontSize="Large"/>
                         <StackLayout Orientation="Horizontal">
                             <Image Source="User.png" Opacity="0.4" HeightRequest="30"/>
-                            <Entry Placeholder="Username" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" PlaceholderColor="Gray" FontSize="Medium"/>
+                            <Entry Placeholder="Username" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" PlaceholderColor="Gray" FontSize="Medium" Text="{Binding Username}"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Image Source="if_f09c_213081.png" Opacity="0.4" HeightRequest="35"/>
-                            <Entry Placeholder="Password" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsPassword="True"  PlaceholderColor="Gray" FontSize="Medium"/>
+                            <Entry Placeholder="Password" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsPassword="True"  PlaceholderColor="Gray" FontSize="Medium" Text="{Binding Password}"/>
                         </StackLayout>
                         <StackLayout Orientation="Horizontal">
                             <Image Source="Email.png" Opacity="0.4" HeightRequest="30"/>
-                            <Entry Placeholder="Email" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" PlaceholderColor="Gray" FontSize="Medium"/>
+                            <Entry Placeholder="Email" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" PlaceholderColor="Gray" FontSize="Medium" Text="{Binding Email}"/>
                         </StackLayout>
-                        <Button Text="Sign Up!" BackgroundColor="#3498db" TextColor="White" FontSize="Medium"/>
+                        <Button Text="Sign Up!" BackgroundColor="#3498db" TextColor="White" FontSize="Medium" Command="{Binding CreateAccountCommand}"/>
                     </StackLayout>
                 </Frame>
-
+                <ListView ItemsSource="{Binding Accounts}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout>
+                                    <Label Text="{Binding Username}"/>
+                                    <Label Text="{Binding Email}"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

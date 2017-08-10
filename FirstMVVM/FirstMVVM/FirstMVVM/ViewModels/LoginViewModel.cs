@@ -13,6 +13,9 @@ namespace FirstMVVM.ViewModels
     public class LoginViewModel : INotifyPropertyChanged
     {
         public ICommand SignUpCommand { get; set; }
+        public ICommand LoginCommand { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
         private INavigation navigation;
         private string _message;
         public string Message
@@ -31,6 +34,7 @@ namespace FirstMVVM.ViewModels
         public LoginViewModel()
         {
             SignUpCommand = new Command(async () => await Application.Current.MainPage.Navigation.PushAsync(new SignUp()));
+            LoginCommand = new Command(Login);
         }
     
 
@@ -38,6 +42,12 @@ namespace FirstMVVM.ViewModels
         {
             this.navigation = navigation;
             SignUpCommand = new Command(async()=> await navigation.PushAsync(new SignUp()));
+        }
+
+        public async void Login()
+        {
+            await App.AccountDb.Login(Username, Password);
+            await App.Current.MainPage.Navigation.PushAsync(new Dashboard());
         }
 
         public async Task SignUp()
