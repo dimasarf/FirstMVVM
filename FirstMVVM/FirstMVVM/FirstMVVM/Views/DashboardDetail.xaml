@@ -2,8 +2,65 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FirstMVVM.Views.DashboardDetail"
-             Title="Detail">
-  <StackLayout Padding="10">
-    <Label Text="This is a detail page. To get the 'triple' line icon on each platform add a icon to each platform and update the 'Master' page with an Icon that references it."/>
+             xmlns:ViewModel="clr-namespace:FirstMVVM.ViewModels"
+             Title="Dashboard">
+    <ContentPage.BindingContext>
+        <ViewModel:DashboardViewModel/>
+    </ContentPage.BindingContext>
+    <StackLayout Spacing="0" BackgroundColor="#34495e">        
+        <Grid BackgroundColor="#34495e" Padding="20,40,20,40">
+            <StackLayout Spacing="5">
+                <Label Text="Visit Me On :" HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="White"/>
+                <StackLayout Orientation="Horizontal" Spacing="50" VerticalOptions="Center" HorizontalOptions="Center">
+                    <StackLayout>
+                        <Image Source="if_github_1107228.png" HeightRequest="120"/>
+                        <Button BackgroundColor="#34495e" TextColor="White" Text="GitHub!" FontSize="Medium" Command="{Binding VisitGithubCommand}"/>
+                    </StackLayout>
+                    <StackLayout>
+                        <Image Source="if_instagram_1107220.png" HeightRequest="120"/>
+                        <Button BackgroundColor="#34495e" TextColor="White" Text="Instagram!" FontSize="Medium" Command="{Binding VisitInstagramCommand}"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </Grid>  
+        
+        <Grid BackgroundColor="PapayaWhip" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" RowSpacing="0" ColumnSpacing="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Frame BackgroundColor="#2ecc71" Grid.Row="0" Grid.Column="0">
+                <StackLayout Padding="20, 40,20,40">
+                    <Image Source="Add.png" Grid.Row="0" Grid.Column="0" HeightRequest="100" Opacity="0.7"/>
+                    <Button BackgroundColor="White" TextColor="#2ecc71" Text="Add Employee" FontSize="Medium"/>
+                </StackLayout>                
+            </Frame>
+
+            <Frame BackgroundColor="#3498db" Grid.Row="0" Grid.Column="1">
+                <StackLayout Padding="20, 40,20,40">
+                    <Image Source="Edit.png" Grid.Row="0" Grid.Column="0" HeightRequest="100" Opacity="0.7"/>
+                    <Button BackgroundColor="White" TextColor="#3498db" Text="Edit Employee" FontSize="Medium"/>
+                </StackLayout>                
+            </Frame>
+
+            <Frame BackgroundColor="#f1c40f" Grid.Row="1" Grid.Column="0">
+                <StackLayout Padding="20, 40,20,40">
+                    <Image Source="List.png" Grid.Row="0" Grid.Column="0" HeightRequest="100" Opacity="0.7"/>
+                    <Button BackgroundColor="White" TextColor="#f1c40f" Text="View Employee" FontSize="Medium"/>
+                </StackLayout>                
+            </Frame>
+
+            <Frame BackgroundColor="#e74c3c" Grid.Row="1" Grid.Column="1">
+                <StackLayout Padding="20, 40,20,40">
+                    <Image Source="Delete.png" Grid.Row="0" Grid.Column="0" HeightRequest="100" Opacity="0.7"/>
+                    <Button BackgroundColor="White" TextColor="#e74c3c" Text="Remove Employee" FontSize="Medium"/>
+                </StackLayout>                
+            </Frame>
+
+        </Grid>
   </StackLayout>
 </ContentPage>

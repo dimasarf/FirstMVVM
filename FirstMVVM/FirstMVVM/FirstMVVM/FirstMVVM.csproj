@@ -47,6 +47,7 @@
     <Compile Include="Repositories\AccountRepositories.cs" />
     <Compile Include="Repositories\EmployeeRepositories.cs" />
     <Compile Include="Services\ILocalFileHelper.cs" />
+    <Compile Include="ViewModels\DashboardViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\SignUpViewModel.cs" />
     <Compile Include="Views\Dashboard.xaml.cs">
@@ -102,7 +103,9 @@
   <ItemGroup>
     <EmbeddedResource Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\SettingsIcon.png" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\Login.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
@@ -147,6 +150,16 @@
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\if_github_1107228.png" />
+    <EmbeddedResource Include="Views\if_instagram_1107220.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Add.png" />
+    <EmbeddedResource Include="Views\Delete.png" />
+    <EmbeddedResource Include="Views\Edit.png" />
+    <EmbeddedResource Include="Views\List.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

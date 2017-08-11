@@ -36,6 +36,7 @@ namespace FirstMVVM.Repositories
         public Task<Account> Login(string Username, string Password)
         {
             var account = _accountDb.Table<Account>().Where(a => a.Username == Username && a.Password == Password).FirstAsync();
+            
             if (account != null)
                 return account;
             else
