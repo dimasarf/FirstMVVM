@@ -36,7 +36,7 @@
             <Frame BackgroundColor="#2ecc71" Grid.Row="0" Grid.Column="0">
                 <StackLayout Padding="20, 40,20,40">
                     <Image Source="Add.png" Grid.Row="0" Grid.Column="0" HeightRequest="100" Opacity="0.7"/>
-                    <Button BackgroundColor="White" TextColor="#2ecc71" Text="Add Employee" FontSize="Medium"/>
+                    <Button BackgroundColor="White" TextColor="#2ecc71" Text="Add Employee" FontSize="Medium" Command="{Binding NavigateToAddEmployeeCommand}"/>
                 </StackLayout>                
             </Frame>
 

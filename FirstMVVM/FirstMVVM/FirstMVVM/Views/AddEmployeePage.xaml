@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FirstMVVM.Views.AddEmployeePage"
+             xmlns:ViewModel="clr-namespace:FirstMVVM.ViewModels">
+    <ContentPage.BindingContext>
+        <ViewModel:AddEmployeePageViewModel/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#2ecc71" Padding="40,200,40,100" Opacity="0.7">
+            <Frame  BackgroundColor="White" Padding="40">
+                <StackLayout>
+                    <Entry Placeholder="Employee Name" PlaceholderColor="Black" FontSize="Medium" Opacity="0.7" Text="{Binding EmployeeName}"/>
+                    <Entry Placeholder="Department" PlaceholderColor="Black" FontSize="Medium" Opacity="0.7" Text="{Binding Department}"/>
+                    <Entry Placeholder="Age" PlaceholderColor="Black" FontSize="Medium" Opacity="0.7"/>
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+                        <Button BackgroundColor="#2ecc71" TextColor="White" Text="Save" FontSize="Medium" HorizontalOptions="CenterAndExpand" Command="{Binding AddEmployeeCommand}"/>
+                        <Button BackgroundColor="#e74c3c" TextColor="White" Text="Cancel" FontSize="Medium" HorizontalOptions="CenterAndExpand" Command="{Binding CancelCommand}" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
